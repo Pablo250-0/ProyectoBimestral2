@@ -4,15 +4,13 @@
  */
 package Controller;
 
+import Model.Activo;
+import java.util.ArrayList;
+
 /**
  *
  * @author Pablo
  */
-package Controller;
-
-import Model.Activo;
-import java.util.ArrayList;
-
 public class ControladorActivos {
 
     private final LecturaActivos lector;
@@ -46,7 +44,8 @@ public class ControladorActivos {
     public ArrayList<Activo> verificarMantenimientos() {
         ArrayList<Activo> pendientes = new ArrayList<>();
         for (Activo a : lector.listarTodos()) {
-            if (a.verificarEstado().equals("MANTENIMIENTO_PENDIENTE")) {
+            String estado = a.verificarEstado();
+            if (estado.equals("Vencido") || estado.equals("Próximo mantenimiento")) {
                 pendientes.add(a);
             }
         }

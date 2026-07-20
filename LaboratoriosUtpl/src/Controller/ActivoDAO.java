@@ -1,15 +1,15 @@
 package Controller;
 
 import Model.Activo;
-// TODO CARLOS: descomentar cuando existan las clases
-// import Model.Hardware;
-// import Model.Software;
-// import Model.Licencia;
+import Model.Hardware;
+import Model.Software;
+import Model.Licencia;
 import Util.ConexionSQLite;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class ActivoDAO implements EscrituraActivos, LecturaActivos {
@@ -19,13 +19,12 @@ public class ActivoDAO implements EscrituraActivos, LecturaActivos {
         String sql = "INSERT INTO activos (id, tipoActivo, nombre, estado, fechaIngreso, "
                 + "fechaDeBaja, areaPertenencia, costoBase, fechaProximoMantenimiento, "
                 + "tiempoDeUso, ultimoMantenimiento, vidaUtil, proveedor, version, "
-                + "plataforma, numeroDeInstalaciones, fechaCaducidad, Tipo, TipoDeSoftware) "
+                + "plataforma, numeroDeInstalaciones, fechaCaducidad, tipoLicencia, tipoDeSoftware) "
                 + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = ConexionSQLite.conectar();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
-            /* TODO CARLOS: descomentar cuando Activo tenga sus getters
             pstmt.setString(1, activo.getId());
             pstmt.setString(2, tipoDe(activo));
             pstmt.setString(3, activo.getNombre());
@@ -58,20 +57,17 @@ public class ActivoDAO implements EscrituraActivos, LecturaActivos {
             }
 
             pstmt.executeUpdate();
-            */
 
         } catch (SQLException e) {
             System.err.println("Error al guardar activo: " + e.getMessage());
         }
     }
 
-    /* TODO CARLOS: descomentar cuando existan Hardware, Software, Licencia
     private String tipoDe(Activo activo) {
         if (activo instanceof Hardware) return "HARDWARE";
         if (activo instanceof Software) return "SOFTWARE";
         return "LICENCIA";
     }
-    */
 
     @Override
     public void actualizar(Activo activo) {
@@ -79,13 +75,12 @@ public class ActivoDAO implements EscrituraActivos, LecturaActivos {
                 + "fechaDeBaja = ?, areaPertenencia = ?, costoBase = ?, "
                 + "fechaProximoMantenimiento = ?, tiempoDeUso = ?, ultimoMantenimiento = ?, "
                 + "vidaUtil = ?, proveedor = ?, version = ?, plataforma = ?, "
-                + "numeroDeInstalaciones = ?, fechaCaducidad = ?, Tipo = ?, "
-                + "TipoDeSoftware = ? WHERE id = ?";
+                + "numeroDeInstalaciones = ?, fechaCaducidad = ?, tipoLicencia = ?, "
+                + "tipoDeSoftware = ? WHERE id = ?";
 
         try (Connection conn = ConexionSQLite.conectar();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
-            /* TODO CARLOS: descomentar cuando Activo tenga sus getters
             pstmt.setString(1, activo.getNombre());
             pstmt.setString(2, activo.getEstado());
             pstmt.setString(3, activo.getFechaIngreso().toString());
@@ -118,7 +113,6 @@ public class ActivoDAO implements EscrituraActivos, LecturaActivos {
             pstmt.setString(18, activo.getId());
 
             pstmt.executeUpdate();
-            */
 
         } catch (SQLException e) {
             System.err.println("Error al actualizar activo: " + e.getMessage());
@@ -183,15 +177,44 @@ public class ActivoDAO implements EscrituraActivos, LecturaActivos {
         return lista;
     }
 
-    private Activo construirActivo(ResultSet rs) throws SQLException {
+private Activo construirActivo(ResultSet rs) throws SQLException {
         String tipo = rs.getString("tipoActivo");
 
-        /* TODO CARLOS: descomentar cuando existan los constructores del modelo
+        String id = rs.getString("id");
+        String nombre = rs.getString("nombre");
+        String estado = rs.getString("estado");
+        LocalDate fechaIngreso = LocalDate.parse(rs.getString("fechaIngreso"));
+        LocalDate fechaDeBaja = rs.getString("fechaDeBaja") != null
+                ? LocalDate.parse(rs.getString("fechaDeBaja")) : null;
+        String area = rs.getString("areaPertenencia");
+        double costoBase = rs.getDouble("costoBase");
+
         switch (tipo) {
             case "HARDWARE":
                 return new Hardware(
-                    rs.getString("id"), rs.getString("nombre"), rs.getString("estado"),
-                    LocalDate.parse(rs.getString("fechaIngreso")),
-                    rs.getString("fechaDeBaja") != null ? LocalDate.parse(rs.getString("fechaDeBaja")) : null,
-                    rs.getString("areaPertenencia"), rs.getDouble("costoBase"),
                     LocalDate.parse(rs.getString("fechaProximoMantenimiento")),
+                    rs.getInt("tiempoDeUso"),
+                    LocalDate.parse(rs.getString("ultimoMantenimiento")),
+                    rs.getInt("vidaUtil"),
+                    nombre, id, estado, fechaIngreso, fechaDeBaja, area, costoBase
+                );
+            case "SOFTWARE":
+                return new Software(
+                    rs.getString("plataforma"),
+                    rs.getInt("numeroDeInstalaciones"),
+                    rs.getString("tipoDeSoftware"),
+                    null,                                    // licencia asociada: no se persiste aún
+                    rs.getString("proveedor"), rs.getString("version"),
+                    nombre, id, estado, fechaIngreso, fechaDeBaja, area, costoBase
+                );
+            case "LICENCIA":
+                return new Licencia(
+                    rs.getString("tipoLicencia"),
+                    LocalDate.parse(rs.getString("fechaCaducidad")),
+                    rs.getString("proveedor"), rs.getString("version"),
+                    nombre, id, estado, fechaIngreso, fechaDeBaja, area, costoBase
+                );
+        }
+        return null;
+    }
+}

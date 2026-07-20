@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 public class Software extends ActivoDigital {
-    
+
     private String plataforma;
     private int numeroDeInstalaciones;
     private String tipoDeSoftware;
@@ -17,22 +17,38 @@ public class Software extends ActivoDigital {
         this.tipoDeSoftware = tipoDeSoftware;
         this.licencia = licencia;
     }
-    
+
+    public String getPlataforma() {
+        return plataforma;
+    }
+
+    public int getNumeroDeInstalaciones() {
+        return numeroDeInstalaciones;
+    }
+
+    public String getTipoDeSoftware() {
+        return tipoDeSoftware;
+    }
+
+    public Licencia getLicencia() {
+        return licencia;
+    }
+
     @Override
     public String verificarEstado() {
-        
+
         LocalDate hoy = LocalDate.now();
-        
+
         if (esVersionDesactualizada()) {
             return "Desactualizada";
         }
         if (licencia != null) {
             LocalDate fechaCaducidad = licencia.getFechaDeCaducidad();
-            
+
             if (hoy.isAfter(fechaCaducidad)) {
                 return "Expirada";
             }
-            
+
             long diasParaVencer = ChronoUnit.DAYS.between(hoy, fechaCaducidad);
             if (diasParaVencer >= 0 && diasParaVencer < 30) {
                 return "Por vencer";
@@ -43,13 +59,13 @@ public class Software extends ActivoDigital {
         }
 
         return "Disponible";
-        
+
     }
 
     private boolean esVersionDesactualizada() {
-        return "v1.0".equals(this.getVersion()); 
+        return "v1.0".equals(this.getVersion());
     }
-    
+
     @Override
     public double calculoDeCosto() {
         return this.getCostoBase();

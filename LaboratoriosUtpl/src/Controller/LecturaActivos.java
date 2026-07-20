@@ -3,16 +3,17 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Controller;
+
 import java.util.ArrayList;
 import Model.Activo;
+
 /**
  *
  * @author Pablo
  */
 public interface LecturaActivos {
 
-    ArrayList<Activo> listaActivos = new ArrayList<>();
-
     Activo buscarActivo(String id);
 
+    ArrayList<Activo> listarTodos();
 }
