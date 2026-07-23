@@ -10,8 +10,8 @@ public class Software extends ActivoDigital {
     private String tipoDeSoftware;
     private Licencia licencia;
 
-    public Software(String plataforma, int numeroDeInstalaciones, String tipoDeSoftware, Licencia licencia, String proveedor, String version, String nombre, String id, String estado, LocalDate fechaIngreso, LocalDate fechaDeBaja, String areaDePertenencia, double costoBase) {
-        super(proveedor, version, nombre, id, estado, fechaIngreso, fechaDeBaja, areaDePertenencia, costoBase);
+    public Software(String plataforma, int numeroDeInstalaciones, String tipoDeSoftware, Licencia licencia, String proveedor, String version, String nombre, String id, String estado, LocalDate fechaIngreso, LocalDate fechaDeBaja, double costoBase) {
+        super(proveedor, version, nombre, id, estado, fechaIngreso, fechaDeBaja, costoBase);
         this.plataforma = plataforma;
         this.numeroDeInstalaciones = numeroDeInstalaciones;
         this.tipoDeSoftware = tipoDeSoftware;

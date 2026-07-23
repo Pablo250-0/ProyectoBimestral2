@@ -2,19 +2,19 @@ package Model;
 
 import java.time.LocalDate;
 
-public class Hardware extends Activo {
-    
-    private LocalDate fechaDeProximoMantenimiento;
-    private int tiempoDeUso;
-    private LocalDate ultimoMantenimiento;
-    private int vidaUtil;
+public abstract class Hardware extends ActivoFisico {
 
-    public Hardware(LocalDate fechaDeProximoMantenimiento, int tiempoDeUso, LocalDate ultimoMantenimiento, int vidaUtil, String nombre, String id, String estado, LocalDate fechaIngreso, LocalDate fechaDeBaja, String areaDePertenencia, double costoBase) {
-        super(nombre, id, estado, fechaIngreso, fechaDeBaja, areaDePertenencia, costoBase);
+    protected LocalDate fechaDeProximoMantenimiento;
+    protected int tiempoDeUso;
+    protected LocalDate ultimoMantenimiento;
+    protected EstadoM estadoM;
+
+    public Hardware(LocalDate fechaDeProximoMantenimiento, int tiempoDeUso, LocalDate ultimoMantenimiento, EstadoM estadoM, String ubicacion, String numeroSerie, String responsable, int vidaUtil, String nombre, String id, String estado, LocalDate fechaIngreso, LocalDate fechaDeBaja, double costoBase) {
+        super(ubicacion, numeroSerie, responsable, vidaUtil, nombre, id, estado, fechaIngreso, fechaDeBaja, costoBase);
         this.fechaDeProximoMantenimiento = fechaDeProximoMantenimiento;
         this.tiempoDeUso = tiempoDeUso;
         this.ultimoMantenimiento = ultimoMantenimiento;
-        this.vidaUtil = vidaUtil;
+        this.estadoM = estadoM;
     }
 
     public LocalDate getFechaDeProximoMantenimiento() {
@@ -41,30 +41,20 @@ public class Hardware extends Activo {
         this.ultimoMantenimiento = ultimoMantenimiento;
     }
 
-    public int getVidaUtil() {
-        return vidaUtil;
+    public EstadoM getEstadoM() {
+        return estadoM;
     }
 
-    public void setVidaUtil(int vidaUtil) {
-        this.vidaUtil = vidaUtil;
+    public void setEstadoM(EstadoM estadoM) {
+        this.estadoM = estadoM;
     }
 
-    @Override
-    public String verificarEstado() {
-        if (LocalDate.now().isAfter(fechaDeProximoMantenimiento)) {
-            return "Vencido";
-        }
-
-        if (LocalDate.now().plusDays(30).isAfter(fechaDeProximoMantenimiento)) {
-            return "Próximo mantenimiento";
-        }
-
-        return "Operativo";
+    public boolean requiereMantenimiento() {
+        return fechaDeProximoMantenimiento != null && !LocalDate.now().isBefore(fechaDeProximoMantenimiento);
     }
 
-    @Override
-    public double calculoDeCosto() {
-        return costoBase +(tiempoDeUso * 8);
-    }
-    
+    public abstract String verificarEstado();
+
+    public abstract double calculoDeCosto();
+
 }
