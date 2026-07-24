@@ -15,6 +15,7 @@ public class Computadora extends Hardware {
     public Computadora(String sistemaOperativo, String procesador, String ram, int cantidadAlmacenamiento, LocalDate fechaDeProximoMantenimiento, int tiempoDeUso, LocalDate ultimoMantenimiento, EstadoM estadoM, String ubicacion, String numeroSerie, String responsable, int vidaUtil, String nombre, String id, String estado, LocalDate fechaIngreso, LocalDate fechaDeBaja, double costoBase) {
         super(fechaDeProximoMantenimiento, tiempoDeUso, ultimoMantenimiento, estadoM, ubicacion, numeroSerie, responsable, vidaUtil, nombre, id, estado, fechaIngreso, fechaDeBaja, costoBase);
         this.sistemaOperativo = sistemaOperativo;
+        this.procesador = procesador;
         this.ram = ram;
         this.cantidadAlmacenamiento = cantidadAlmacenamiento;
     }
