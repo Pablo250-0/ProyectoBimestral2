@@ -2,23 +2,24 @@ package Model;
 
 import java.time.LocalDate;
 
+/**
+ * @author Pablo
+ */
 public abstract class Activo {
-    
-     protected String nombre;
+
+    protected String nombre;
     protected String id;
     protected String estado;
     protected LocalDate fechaIngreso;
     protected LocalDate fechaDeBaja;
-    protected String areaDePertenencia;
     protected double costoBase;
 
-    public Activo(String nombre, String id, String estado, LocalDate fechaIngreso, LocalDate fechaDeBaja, String areaDePertenencia, double costoBase) {
+    public Activo(String nombre, String id, String estado, LocalDate fechaIngreso, LocalDate fechaDeBaja, double costoBase) {
         this.nombre = nombre;
         this.id = id;
         this.estado = estado;
         this.fechaIngreso = fechaIngreso;
         this.fechaDeBaja = fechaDeBaja;
-        this.areaDePertenencia = areaDePertenencia;
         this.costoBase = costoBase;
     }
 
@@ -62,14 +63,6 @@ public abstract class Activo {
         this.fechaDeBaja = fechaDeBaja;
     }
 
-    public String getAreaDePertenencia() {
-        return areaDePertenencia;
-    }
-
-    public void setAreaDePertenencia(String areaDePertenencia) {
-        this.areaDePertenencia = areaDePertenencia;
-    }
-
     public double getCostoBase() {
         return costoBase;
     }
@@ -77,13 +70,13 @@ public abstract class Activo {
     public void setCostoBase(double costoBase) {
         this.costoBase = costoBase;
     }
-    
-    public abstract String verificarEstado();
-    
-    public abstract double calculoDeCosto();
+
+    public abstract double calcularCosto();
 
     @Override
     public String toString() {
-        return "Activo{" + "nombre=" + nombre + ", id=" + id + ", estado=" + estado + ", fechaIngreso=" + fechaIngreso + ", fechaDeBaja=" + fechaDeBaja + ", areaDePertenencia=" + areaDePertenencia + ", costoBase=" + costoBase + '}';
+        return "Activo{" + "nombre=" + nombre + ", id=" + id + ", estado=" + estado
+                + ", fechaIngreso=" + fechaIngreso + ", fechaDeBaja=" + fechaDeBaja
+                + ", costoBase=" + costoBase + '}';
     }
 }

@@ -3,12 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Pablo/Documents/UTPL/Ciclo%202/POO/LaboratoriosUtpl/src/View/vistaInventario.java</file>
-            <file>file:/C:/Users/Pablo/Documents/UTPL/Ciclo%202/POO/LaboratoriosUtpl/src/Controller/ActivoDAO.java</file>
-            <file>file:/C:/Users/Pablo/Documents/UTPL/Ciclo%202/POO/LaboratoriosUtpl/src/Util/ConexionSQLite.java</file>
-            <file>file:/C:/Users/Pablo/Documents/UTPL/Ciclo%202/POO/LaboratoriosUtpl/src/Controller/LecturaActivos.java</file>
-            <file>file:/C:/Users/Pablo/Documents/UTPL/Ciclo%202/POO/LaboratoriosUtpl/src/Controller/EscrituraActivos.java</file>
-            <file>file:/C:/Users/Pablo/Documents/UTPL/Ciclo%202/POO/LaboratoriosUtpl/src/Controller/ControladorActivos.java</file>
+            <file>file:/C:/Users/Usuario%20iTC/Desktop/ProyectoBimestral%202/ProyectoBimestral2/LaboratoriosUtpl/src/Model/Activo.java</file>
+            <file>file:/C:/Users/Usuario%20iTC/Desktop/ProyectoBimestral%202/ProyectoBimestral2/LaboratoriosUtpl/src/Model/Hardware.java</file>
+            <file>file:/C:/Users/Usuario%20iTC/Desktop/ProyectoBimestral%202/ProyectoBimestral2/LaboratoriosUtpl/src/Model/ActivoDigital.java</file>
+            <file>file:/C:/Users/Usuario%20iTC/Desktop/ProyectoBimestral%202/ProyectoBimestral2/LaboratoriosUtpl/src/Model/Licencia.java</file>
+            <file>file:/C:/Users/Usuario%20iTC/Desktop/ProyectoBimestral%202/ProyectoBimestral2/LaboratoriosUtpl/src/Model/Software.java</file>
+            <file>file:/C:/Users/Usuario%20iTC/Desktop/ProyectoBimestral%202/ProyectoBimestral2/LaboratoriosUtpl/src/Model/ActivoFisico.java</file>
+            <file>file:/C:/Users/Usuario%20iTC/Desktop/ProyectoBimestral%202/ProyectoBimestral2/LaboratoriosUtpl/src/Model/Computadora.java</file>
+            <file>file:/C:/Users/Usuario%20iTC/Desktop/ProyectoBimestral%202/ProyectoBimestral2/LaboratoriosUtpl/src/Model/Impresora.java</file>
+            <file>file:/C:/Users/Usuario%20iTC/Desktop/ProyectoBimestral%202/ProyectoBimestral2/LaboratoriosUtpl/src/Model/Persona.java</file>
+            <file>file:/C:/Users/Usuario%20iTC/Desktop/ProyectoBimestral%202/ProyectoBimestral2/LaboratoriosUtpl/src/Model/Usuario.java</file>
+            <file>file:/C:/Users/Usuario%20iTC/Desktop/ProyectoBimestral%202/ProyectoBimestral2/LaboratoriosUtpl/src/Model/CarreraIngenieria.java</file>
+            <file>file:/C:/Users/Usuario%20iTC/Desktop/ProyectoBimestral%202/ProyectoBimestral2/LaboratoriosUtpl/src/Model/Rol.java</file>
+            <file>file:/C:/Users/Usuario%20iTC/Desktop/ProyectoBimestral%202/ProyectoBimestral2/LaboratoriosUtpl/src/Model/Laboratorio.java</file>
+            <file>file:/C:/Users/Usuario%20iTC/Desktop/ProyectoBimestral%202/ProyectoBimestral2/LaboratoriosUtpl/src/Model/EstadoM.java</file>
         </group>
     </open-files>
 </project-private>

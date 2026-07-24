@@ -7,8 +7,8 @@ public abstract class ActivoDigital extends Activo {
     protected String proveedor;
     protected String version;
 
-    public ActivoDigital(String proveedor, String version, String nombre, String id, String estado, LocalDate fechaIngreso, LocalDate fechaDeBaja, String areaDePertenencia, double costoBase) {
-        super(nombre, id, estado, fechaIngreso, fechaDeBaja, areaDePertenencia, costoBase);
+    public ActivoDigital(String proveedor, String version, String nombre, String id, String estado, LocalDate fechaIngreso, LocalDate fechaDeBaja, double costoBase) {
+        super(nombre, id, estado, fechaIngreso, fechaDeBaja, costoBase);
         this.proveedor = proveedor;
         this.version = version;
     }
@@ -31,5 +31,5 @@ public abstract class ActivoDigital extends Activo {
 
     public abstract String verificarEstado();
 
-    public abstract double calculoDeCosto();
+    
 }
