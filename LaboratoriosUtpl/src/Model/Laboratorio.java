@@ -17,7 +17,7 @@ public class Laboratorio {
         this.edificio = edificio;
         this.aula = aula;
         this.capacidad = capacidad;
-        this.activos = new ArrayList<>();
+        this.activos = (activos != null) ? activos : new ArrayList<>();
     }
 
     public String getCodigoLab() {
