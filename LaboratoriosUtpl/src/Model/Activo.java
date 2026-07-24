@@ -1,18 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Model;
 
+import java.time.LocalDate;
+
 /**
- *
  * @author Pablo
  */
 public abstract class Activo {
-<<<<<<< Updated upstream
-}
-=======
-    
+
     protected String nombre;
     protected String id;
     protected String estado;
@@ -81,9 +75,8 @@ public abstract class Activo {
 
     @Override
     public String toString() {
-        return "Activo{" + "nombre=" + nombre + ", id=" + id + ", estado=" + estado + ", fechaIngreso=" + fechaIngreso + ", fechaDeBaja=" + fechaDeBaja + ", costoBase=" + costoBase + '}';
+        return "Activo{" + "nombre=" + nombre + ", id=" + id + ", estado=" + estado
+                + ", fechaIngreso=" + fechaIngreso + ", fechaDeBaja=" + fechaDeBaja
+                + ", costoBase=" + costoBase + '}';
     }
-
-    
 }
->>>>>>> Stashed changes
