@@ -2,8 +2,11 @@ package Model;
 
 import java.time.LocalDate;
 
+/**
+ * @author Pablo
+ */
 public abstract class Activo {
-    
+
     protected String nombre;
     protected String id;
     protected String estado;
@@ -68,10 +71,12 @@ public abstract class Activo {
         this.costoBase = costoBase;
     }
 
+    public abstract double calcularCosto();
+
     @Override
     public String toString() {
-        return "Activo{" + "nombre=" + nombre + ", id=" + id + ", estado=" + estado + ", fechaIngreso=" + fechaIngreso + ", fechaDeBaja=" + fechaDeBaja + ", costoBase=" + costoBase + '}';
+        return "Activo{" + "nombre=" + nombre + ", id=" + id + ", estado=" + estado
+                + ", fechaIngreso=" + fechaIngreso + ", fechaDeBaja=" + fechaDeBaja
+                + ", costoBase=" + costoBase + '}';
     }
-
-    
 }

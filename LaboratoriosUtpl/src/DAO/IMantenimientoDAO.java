@@ -2,17 +2,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Controller;
+package DAO;
+
+import Model.Mantenimiento;
 import java.util.ArrayList;
-import Model.Activo;
+
 /**
- *
  * @author Pablo
  */
-public interface LecturaActivos {
+public interface IMantenimientoDAO {
 
-    ArrayList<Activo> listaActivos = new ArrayList<>();
+    void guardar(Mantenimiento mantenimiento);
 
-    Activo buscarActivo(String id);
+    ArrayList<Mantenimiento> listarHistorial(String idActivo);
 
+    ArrayList<Mantenimiento> listarTodos();
 }

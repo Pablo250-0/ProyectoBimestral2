@@ -2,6 +2,9 @@ package Model;
 
 import java.time.LocalDate;
 
+/**
+ * @author Pablo
+ */
 public class Impresora extends Hardware {
     
     private String tipoImpresion;
@@ -52,7 +55,7 @@ public class Impresora extends Hardware {
     }
 
     @Override
-    public double calculoDeCosto() {
+    public double calcularCosto() {
         if (vidaUtil <= 0) return costoBase;
         double factor = Math.max(0.10, 1 - ((double) tiempoDeUso / vidaUtil));
         return costoBase * factor;

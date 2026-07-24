@@ -2,6 +2,9 @@ package Model;
 
 import java.time.LocalDate;
 
+/**
+ * @author Pablo
+ */
 public class Computadora extends Hardware {
 
     private String sistemaOperativo;
@@ -12,7 +15,6 @@ public class Computadora extends Hardware {
     public Computadora(String sistemaOperativo, String procesador, String ram, int cantidadAlmacenamiento, LocalDate fechaDeProximoMantenimiento, int tiempoDeUso, LocalDate ultimoMantenimiento, EstadoM estadoM, String ubicacion, String numeroSerie, String responsable, int vidaUtil, String nombre, String id, String estado, LocalDate fechaIngreso, LocalDate fechaDeBaja, double costoBase) {
         super(fechaDeProximoMantenimiento, tiempoDeUso, ultimoMantenimiento, estadoM, ubicacion, numeroSerie, responsable, vidaUtil, nombre, id, estado, fechaIngreso, fechaDeBaja, costoBase);
         this.sistemaOperativo = sistemaOperativo;
-        this.procesador = procesador;
         this.ram = ram;
         this.cantidadAlmacenamiento = cantidadAlmacenamiento;
     }
@@ -63,7 +65,7 @@ public class Computadora extends Hardware {
     }
 
     @Override
-    public double calculoDeCosto() {
+    public double calcularCosto() {
         if (vidaUtil <= 0) return costoBase;
         double factor = Math.max(0.10, 1 - ((double) tiempoDeUso / vidaUtil));
         return costoBase * factor;

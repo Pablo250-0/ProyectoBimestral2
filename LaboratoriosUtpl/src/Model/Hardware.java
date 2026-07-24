@@ -55,6 +55,6 @@ public abstract class Hardware extends ActivoFisico {
 
     public abstract String verificarEstado();
 
-    public abstract double calculoDeCosto();
+    
 
 }

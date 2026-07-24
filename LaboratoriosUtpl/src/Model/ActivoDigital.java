@@ -31,5 +31,5 @@ public abstract class ActivoDigital extends Activo {
 
     public abstract String verificarEstado();
 
-    public abstract double calculoDeCosto();
+    
 }

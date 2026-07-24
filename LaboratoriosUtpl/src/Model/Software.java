@@ -3,6 +3,9 @@ package Model;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
+/**
+ * @author Pablo
+ */
 public class Software extends ActivoDigital {
     
     private String plataforma;
@@ -18,6 +21,38 @@ public class Software extends ActivoDigital {
         this.licencia = licencia;
     }
     
+    public String getPlataforma() {
+        return plataforma;
+    }
+
+    public void setPlataforma(String plataforma) {
+        this.plataforma = plataforma;
+    }
+
+    public int getNumeroDeInstalaciones() {
+        return numeroDeInstalaciones;
+    }
+
+    public void setNumeroDeInstalaciones(int numeroDeInstalaciones) {
+        this.numeroDeInstalaciones = numeroDeInstalaciones;
+    }
+
+    public String getTipoDeSoftware() {
+        return tipoDeSoftware;
+    }
+
+    public void setTipoDeSoftware(String tipoDeSoftware) {
+        this.tipoDeSoftware = tipoDeSoftware;
+    }
+
+    public Licencia getLicencia() {
+        return licencia;
+    }
+
+    public void setLicencia(Licencia licencia) {
+        this.licencia = licencia;
+    }
+
     @Override
     public String verificarEstado() {
         
@@ -51,7 +86,7 @@ public class Software extends ActivoDigital {
     }
     
     @Override
-    public double calculoDeCosto() {
+    public double calcularCosto() {
         return this.getCostoBase();
     }
 }

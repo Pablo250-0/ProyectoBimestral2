@@ -61,6 +61,6 @@ public abstract class ActivoFisico extends Activo {
 
     public abstract String verificarEstado();
 
-    public abstract double calculoDeCosto();
+    
     
 }

@@ -1,18 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Controller;
 
-/**
- *
- * @author Pablo
- */
-package Controller;
-
+import DAO.LecturaActivos;
+import DAO.EscrituraActivos;
 import Model.Activo;
 import java.util.ArrayList;
 
+/**
+ * @author Pablo
+ */
 public class ControladorActivos {
 
     private final LecturaActivos lector;
@@ -27,29 +22,19 @@ public class ControladorActivos {
         escritor.guardar(activo);
     }
 
-    public void editarActivo(Activo activo) {
+    public void actualizarActivo(Activo activo) {
         escritor.actualizar(activo);
     }
 
-    public void darDeBaja(String id) {
+    public void eliminarActivo(String id) {
         escritor.eliminar(id);
     }
 
-    public Activo consultarActivo(String id) {
+    public Activo buscarActivo(String id) {
         return lector.buscarActivo(id);
     }
 
-    public ArrayList<Activo> listarInventario() {
+    public ArrayList<Activo> listarActivos() {
         return lector.listarTodos();
-    }
-
-    public ArrayList<Activo> verificarMantenimientos() {
-        ArrayList<Activo> pendientes = new ArrayList<>();
-        for (Activo a : lector.listarTodos()) {
-            if (a.verificarEstado().equals("MANTENIMIENTO_PENDIENTE")) {
-                pendientes.add(a);
-            }
-        }
-        return pendientes;
     }
 }
