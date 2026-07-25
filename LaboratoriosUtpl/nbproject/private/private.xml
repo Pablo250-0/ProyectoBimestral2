@@ -3,12 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/C:/Users/Pablo/Documents/UTPL/Ciclo%202/POO/LaboratoriosUtpl/src/View/vistaInventario.java</file>
             <file>file:/C:/Users/Pablo/Documents/UTPL/Ciclo%202/POO/LaboratoriosUtpl/src/Controller/ActivoDAO.java</file>
             <file>file:/C:/Users/Pablo/Documents/UTPL/Ciclo%202/POO/LaboratoriosUtpl/src/Util/ConexionSQLite.java</file>
             <file>file:/C:/Users/Pablo/Documents/UTPL/Ciclo%202/POO/LaboratoriosUtpl/src/Controller/LecturaActivos.java</file>
             <file>file:/C:/Users/Pablo/Documents/UTPL/Ciclo%202/POO/LaboratoriosUtpl/src/Controller/EscrituraActivos.java</file>
             <file>file:/C:/Users/Pablo/Documents/UTPL/Ciclo%202/POO/LaboratoriosUtpl/src/Controller/ControladorActivos.java</file>
+=======
+            <file>file:/C:/Users/Pablo/Documents/UTPL/Ciclo%202/POO/ProyectoBImestral2/LaboratoriosUtpl/src/Model/Activo.java</file>
+            <file>file:/C:/Users/Pablo/Documents/UTPL/Ciclo%202/POO/ProyectoBImestral2/LaboratoriosUtpl/src/Util/ConexionSQLite.java</file>
+            <file>file:/C:/Users/Pablo/Documents/UTPL/Ciclo%202/POO/ProyectoBImestral2/LaboratoriosUtpl/src/Servicios/ServicioCosto.java</file>
+            <file>file:/C:/Users/Pablo/Documents/UTPL/Ciclo%202/POO/ProyectoBImestral2/LaboratoriosUtpl/src/DAO/LaboratorioDAO.java</file>
+            <file>file:/C:/Users/Pablo/Documents/UTPL/Ciclo%202/POO/ProyectoBImestral2/LaboratoriosUtpl/src/Main.java</file>
+            <file>file:/C:/Users/Pablo/Documents/UTPL/Ciclo%202/POO/ProyectoBImestral2/LaboratoriosUtpl/src/DAO/UsuarioDAO.java</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>
